@@ -1,0 +1,7 @@
+#
+# sysusers.d snippet for creating the tomcat user automatically
+# at install time. See sysusers.d(5) for details.
+#
+
+#Type Name     ID             GECOS                 Home directory   Shell
+u     qpidd    -              "Apache QPID"         /var/lib/qpid    /usr/sbin/nologin

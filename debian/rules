@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	      -DBUILD_SASL=ON \
+	      -DBUILD_SSL=ON \
+	      -DBUILD_DOCS=OFF \
+	      -DBUILD_TESTING=OFF \
+	      -DBUILD_BINDING_RUBY=OFF \
+	      -DBUILD_BINDING_PYTHON=OFF \
+	      -DBUILD_BINDING_DOTNET=OFF \
+	      -DCMAKE_CXX_FLAGS="-Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-deprecated-copy" \
+	      -DCMAKE_VERBOSE_MAKEFILE=ON \
+	      -DDESTDIR=debian/qpidd \
+	      -DCMAKE_INSTALL_PREFIX=/usr \
+	      -DSYSCONF_INSTALL_DIR=/etc \
+	      -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+	      -DCMAKE_CXX_COMPILER_WORKS=1
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install
+	dh_installsysusers

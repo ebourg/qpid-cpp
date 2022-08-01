@@ -1,0 +1,33 @@
+Source: qpid-cpp
+Section: misc
+Priority: optional
+Maintainer: Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ cmake,
+ debhelper-compat (= 12),
+ doxygen,
+ libboost-all-dev,
+ libnss3-dev,
+ libsasl2-dev,
+ pkg-config,
+ python2,
+ ruby,
+ ruby-dev,
+ uuid-dev,
+ valgrind,
+ zip
+Standards-Version: 4.6.1
+Vcs-Git: https://github.com/ebourg/qpid-cpp
+Vcs-Browser: https://github.com/ebourg/qpid-cpp
+Homepage: http://qpid.apache.org
+
+Package: qpidd
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ systemd-sysusers
+Description: enterprise messaging system - AMQP broker
+ Apache Qpid is a cross-platform enterprise messaging system which implements
+ the Advanced Message Queuing Protocol (AMQP), providing message brokers
+ written in C++.

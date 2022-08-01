@@ -1,0 +1,5 @@
+qpid-cpp (1.39.0-1) bullseye; urgency=medium
+
+  * Initial release.
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 01 Aug 2022 15:36:57 +0200

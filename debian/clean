@@ -1,0 +1,4 @@
+managementgen/qmfgen/*.pyc
+management/python/build/
+CMakeCache.txt
+CMakeFiles/
